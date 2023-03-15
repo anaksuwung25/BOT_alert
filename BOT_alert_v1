@@ -1,0 +1,21 @@
+===============
+#buat file .sh
+===============
+#nano testbot.sh
+#input file bot :
+
+df -h >> /home/anaksuwung/test.txt && awk '{print$3 "\t" $6}' test.txt
+curl -F document=@"/home/anaksuwung/test.txt" https://api.telegram.org/bot6283418004:AAEEvUCTw5kFoFSpdVaVXUYMda13u-$
+
+curl -X POST 'https://api.telegram.org/bot6283418004:AAEEvUCTw5kFoFSpdVaVXUYMda13u-Ss71c/sendMessage?chat_id=959744$
+rm -rf test.txt
+
+===============
+#pakai schedullar crontab
+===============
+#[minute] [hours] [day of month] [month] [day of the week] command-to-execute
+
+*/5 * * * * sh /home/anaksuwung/testbot.sh /home/anaksuwung/testbot.log
+
+#keterangan :
+  - mengirim file setiap 5 menit (*/5)
