@@ -18,4 +18,4 @@ rm -rf test.txt
 */1 * * * * sh /home/anaksuwung/testbot.sh /home/anaksuwung/testbot.log
 
 #keterangan :
-  - mengirim file setiap 1 menit (*/5)
+  - mengirim file setiap 1 menit (*/1)
