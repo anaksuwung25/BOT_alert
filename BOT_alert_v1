@@ -4,10 +4,10 @@
 #nano testbot.sh
 #input file bot :
 
-df -h >> /home/anaksuwung/test.txt && awk '{print$3 "\t" $6}' test.txt
-curl -F document=@"/home/anaksuwung/test.txt" https://api.telegram.org/bot6283418004:AAEEvUCTw5kFoFSpdVaVXUYMda13u-$
+df -h >> /home/anaksuwung/test.txt
+curl -F document=@"/home/anaksuwung/test.txt" https://api.telegram.org/<TOKEN_API>/sendDocument?chat_id=<CHAT_ID>
 
-curl -X POST 'https://api.telegram.org/bot6283418004:AAEEvUCTw5kFoFSpdVaVXUYMda13u-Ss71c/sendMessage?chat_id=959744$
+curl -X POST 'https://api.telegram.org/<TOKEN_API>/sendMessage?chat_id=<CHAT_ID>$
 rm -rf test.txt
 
 ===============
@@ -15,7 +15,7 @@ rm -rf test.txt
 ===============
 #[minute] [hours] [day of month] [month] [day of the week] command-to-execute
 
-*/5 * * * * sh /home/anaksuwung/testbot.sh /home/anaksuwung/testbot.log
+*/1 * * * * sh /home/anaksuwung/testbot.sh /home/anaksuwung/testbot.log
 
 #keterangan :
-  - mengirim file setiap 5 menit (*/5)
+  - mengirim file setiap 1 menit (*/5)
